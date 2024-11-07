@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-   
+   <script src="/libs/react.development.js"></script>
+   <script src="/libs/react-dom.development.js"></script>
+   <script src="/libs/babel-standalone.js"></script>
 </head>
 <body>
-    
+    <div id="app">
+      <script type="text/babel">
+        const appEl = document.querySelector('#app');
+        const root = ReactDOM.createRoot(appEl);
+        // コンポーネントは先頭を大文字にする（小文字だとコンポーネントとして認識されない）
+        // function Example(){
+        //   return <h1>Hello React</h1>;
+        // }
+        const Example = () => {
+          return (
+            <div>
+              <h1>Hello Components</h1>
+            </div>
+          );
+        }
+
+        // returnの行に何もないとundefinedとなる
+        const a = () => {
+          return 
+          "戻り値";
+        }
+        console.log(a());
+        root.render(<Example />);
+      </script>
+    </div>
 </body>
 </html>
