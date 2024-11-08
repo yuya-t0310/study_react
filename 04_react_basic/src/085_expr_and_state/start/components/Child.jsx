@@ -6,9 +6,18 @@
 import "./Child.css";
 
 const Child = () => {
+  const hello = () => "hello";
+  const fn = () => {};
+  const a = hello();
+  if (true) {
+    ("hello");
+  }
   return (
     <div className="component">
       <h3>式と文</h3>
+      {/* 三項演算子は式なのでJSXに代入可能 */}
+      {true ? "hello" : "bye"}
+      {1}
     </div>
   );
 };

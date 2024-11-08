@@ -9,7 +9,15 @@ const profile = [
 const Example = () => {
   return (
     <div>
-      <Container title="Childrenとは？" />
+      <Container
+        title="Childrenとは？"
+        children={[
+          <Profile key={profile[0].name} {...profile[0]} />,
+          <Profile key={profile[1].name} {...profile[1]} />,
+        ]}
+        first={<Profile key={profile[0].name} {...profile[0]} />}
+        second={<Profile key={profile[1].name} {...profile[1]} />}
+      />
     </div>
   );
 };
