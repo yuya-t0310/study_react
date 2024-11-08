@@ -7,6 +7,9 @@ const Example = () => {
   //   className: "greeting"
   // }, "Hello World");
 
+  console.log(sample1);
+  console.log(<h1 className="greeting">Hello World</h1>);
+
   const sample2 = (
     <div>
       <h1>Hello!</h1>
