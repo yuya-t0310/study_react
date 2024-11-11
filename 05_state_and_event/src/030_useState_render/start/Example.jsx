@@ -10,8 +10,8 @@ const Example = () => {
         type="text"
         onChange={(e) => {
           console.log(e.target.value);
-          setVal(e.target.value);
-          // displayVal = e.target.value;
+          setVal(e.target.value); //setValを実行したタイミングでExampleコンポーネントを再実行している
+          // displayVal = e.target.value;  //displayValでは再レンダリングされない
         }}
       />
       = {val}
