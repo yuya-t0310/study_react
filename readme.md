@@ -32,3 +32,13 @@
   `dsznajder.es7-react-js-snippets`
 
   React のスニペット(ショートカット)を使えるようにする
+
+  ## サーバ起動
+
+  　ターミナルで各セクションフォルダへ移動
+
+  　npm install（初回のみ）
+
+  　npm run
+
+    http://localhost:3001/ にアクセス
