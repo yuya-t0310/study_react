@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { MyContext } from "../Example";
 
 const OtherChild = () => {
-  const [ value, setValue ] = useState(0);
-
+  // 配列の1番目だけを取ってくる
+  const [, setState] = useContext(MyContext);
   const clickHandler = (e) => {
-    setValue((prev) => prev + 1);
+    setState((prev) => prev + 1);
   };
-
   return (
     <div>
       <h3>他の子コンポーネント</h3>
       <button onClick={clickHandler}>+</button>
-      <h3>{value}</h3>
+      {/* <h3>{value}</h3> */}
     </div>
   );
 };
