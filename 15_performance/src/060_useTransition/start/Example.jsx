@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 
 const generateDummyItem = (num) => {
   return new Array(num).fill(null).map((item, index) => `item ${index}`);
@@ -7,15 +7,20 @@ const generateDummyItem = (num) => {
 const dummyItems = generateDummyItem(10000);
 
 const Example = () => {
+  // startTransitionに設定されたコールバック関数の優先順位が下がる
+  const [isPending, startTransition] = useTransition();
   const [filterVal, setFilterVal] = useState("");
 
   const changeHandler = (e) => {
-    setFilterVal(e.target.value);
+    startTransition(() => {
+      setFilterVal(e.target.value);
+    });
   };
 
   return (
     <>
       <input type="text" onChange={changeHandler} />
+      {isPending && <div>Loading...</div>}
       <ul>
         {dummyItems
           .filter((item) => {
