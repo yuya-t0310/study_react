@@ -2,18 +2,20 @@
 import { ENDPOINT } from "@/constants";
 import ArticleList from "../../../components/articleList";
 
-export async function generateMetadata({params}){
-  const article = await fetch(`${ENDPOINT}/${params.id}`).then((res) =>res.json())
+export async function generateMetadata({ params }) {
+  const article = await fetch(`${ENDPOINT}/${params.id}`).then((res) =>
+    res.json()
+  );
   return {
     title: article.title,
     description: article.text,
-  }
+  };
 }
 
 export async function generateStaticParams() {
-  const data = await fetch(ENDPOINT).then(res=>res.json());
-  console.log(data);
-  return data.map(record => ({id: record.id}))
+  const data = await fetch(ENDPOINT).then((res) => res.json());
+  //console.log(data);
+  return data.map((record) => ({ id: record.id }));
 }
 
 export default async function Page() {
