@@ -9,7 +9,15 @@ const Example = () => {
 
   // ?をつけると任意の引数となる
   // ただし型定義にundefinedが追加される
-  const sum2 = (x: number, y?: number) => x + y;
+  // const sum2 = (x: number, y?: number) => x + y;
+
+  //                                    ↓戻り値の型 何も返らない場合はvoid
+  const sum2 = (x: number, y: number): number => x + y;
+  console.log(sum2(1, 4));
+
+  type Sum = (x: number, y: number) => number;
+  const sum3: Sum = (x, y) => x + y;
+  console.log(sum3(100, 150))
 };
 
 export default Example;
