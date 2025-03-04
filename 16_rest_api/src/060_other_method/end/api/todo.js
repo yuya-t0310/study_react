@@ -1,7 +1,7 @@
 // POINT axiosを用いたAPI
 import axios from 'axios';
 
-const ENDPOINT_URL = 'http://localhost:3003/todo'
+const ENDPOINT_URL = 'http://127.0.0.1:3003/todo'
 
 const todoApi = {
     async getAll() {
